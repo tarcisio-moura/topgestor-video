@@ -1,0 +1,995 @@
+<!DOCTYPE html><html lang="pt-br"><head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TOPGESTOR</title>
+        <!-- icofont-css-link -->
+        <link rel="stylesheet" href="css/icofont.min.css">
+        <link rel="stylesheet" href="css/tabler-icons.css">
+        <!-- Owl-Carosal-Style-link -->
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <!-- Bootstrap-Style-link -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Aos-Style-link -->
+        <link rel="stylesheet" href="css/aos.css">
+        <!-- Coustome-Style-link -->         
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Responsive-Style-link -->
+        <link rel="stylesheet" href="css/responsive.css"> 
+        <!-- Favicon -->         
+        <link rel="shortcut icon" href="images/Icone sem fundo.png" type="image/x-icon">
+    <style>
+      .card-body.text-left ul li h5 {
+        font-size: 1rem;
+      }
+
+      span.badge.badge-center.bg-primary.me-2.p-0.rounded-pill {
+        vertical-align: bottom;
+      }
+      span.badge.badge-center.rounded-pill {
+        color: #fff !important;
+      }
+      .cbh-phone{display:block;position:fixed; right: -42px;
+        bottom: -40px; visibility:hidden;background-color:transparent;width:200px;height:200px;cursor:pointer;z-index:999;-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0);-webkit-transition:visibility .5s;-moz-transition:visibility .5s;-o-transition:visibility .5s;transition:visibility .5s}
+        .cbh-phone.cbh-show{visibility:visible}@-webkit-keyframes fadeInRight{0%{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInRight{0%{opacity:0;-webkit-transform:translate3d(100%,0,0);-ms-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}100%{opacity:1;-webkit-transform:none;-ms-transform:none;transform:none}}@-webkit-keyframes fadeInRightBig{0%{opacity:0;-webkit-transform:translate3d(2000px,0,0);transform:translate3d(2000px,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@-webkit-keyframes fadeOutRight{0%{opacity:1}100%{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}}@keyframes fadeOutRight{0%{opacity:1}100%{opacity:0;-webkit-transform:translate3d(100%,0,0);-ms-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}}.fadeOutRight{-webkit-animation-name:fadeOutRight;animation-name:fadeOutRight}
+        .cbh-phone.cbh-static1{opacity:.6}
+        .cbh-phone.cbh-hover1{opacity:1}
+        .cbh-ph-circle{width:110px;height:110px;top:40px;left:40px;position:absolute;background-color:transparent;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;border:2px solid rgba(30,30,30,.4);opacity:.1;-webkit-animation:cbh-circle-anim 1.2s infinite ease-in-out;-moz-animation:cbh-circle-anim 1.2s infinite ease-in-out;-ms-animation:cbh-circle-anim 1.2s infinite ease-in-out;-o-animation:cbh-circle-anim 1.2s infinite ease-in-out;animation:cbh-circle-anim 1.2s infinite ease-in-out;-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;transition:all .5s}
+        .cbh-phone.cbh-active .cbh-ph-circle1{-webkit-animation:cbh-circle-anim 1.1s infinite ease-in-out!important;-moz-animation:cbh-circle-anim 1.1s infinite ease-in-out!important;-ms-animation:cbh-circle-anim 1.1s infinite ease-in-out!important;-o-animation:cbh-circle-anim 1.1s infinite ease-in-out!important;animation:cbh-circle-anim 1.1s infinite ease-in-out!important}
+        .cbh-phone.cbh-static .cbh-ph-circle{-webkit-animation:cbh-circle-anim 2.2s infinite ease-in-out!important;-moz-animation:cbh-circle-anim 2.2s infinite ease-in-out!important;-ms-animation:cbh-circle-anim 2.2s infinite ease-in-out!important;-o-animation:cbh-circle-anim 2.2s infinite ease-in-out!important;animation:cbh-circle-anim 2.2s infinite ease-in-out!important}
+        .cbh-phone.cbh-hover .cbh-ph-circle{border-color:rgba(0,175,242,1);opacity:.5}
+        .cbh-phone.cbh-green.cbh-hover .cbh-ph-circle{border-color:rgba(117,235,80,1);opacity:.5}
+        .cbh-phone.cbh-green .cbh-ph-circle{border-color:rgba(0,175,242,1);opacity:.5}
+        .cbh-phone.cbh-gray.cbh-hover .cbh-ph-circle{border-color:rgba(204,204,204,1);opacity:.5}
+        .cbh-phone.cbh-gray .cbh-ph-circle{border-color:rgba(117,235,80,1);opacity:.5}
+        .cbh-ph-circle-fill{width:74px;height:74px;top:58px;left:58px;position:absolute;background-color:#000;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;border:2px solid transparent;opacity:.1;-webkit-animation:cbh-circle-fill-anim 2.3s infinite ease-in-out;-moz-animation:cbh-circle-fill-anim 2.3s infinite ease-in-out;-ms-animation:cbh-circle-fill-anim 2.3s infinite ease-in-out;-o-animation:cbh-circle-fill-anim 2.3s infinite ease-in-out;animation:cbh-circle-fill-anim 2.3s infinite ease-in-out;-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;transition:all .5s}
+        .cbh-phone.cbh-active .cbh-ph-circle-fill{-webkit-animation:cbh-circle-fill-anim 1.7s infinite ease-in-out!important;-moz-animation:cbh-circle-fill-anim 1.7s infinite ease-in-out!important;-ms-animation:cbh-circle-fill-anim 1.7s infinite ease-in-out!important;-o-animation:cbh-circle-fill-anim 1.7s infinite ease-in-out!important;animation:cbh-circle-fill-anim 1.7s infinite ease-in-out!important}
+        .cbh-phone.cbh-static .cbh-ph-circle-fill{-webkit-animation:cbh-circle-fill-anim 2.3s infinite ease-in-out!important;-moz-animation:cbh-circle-fill-anim 2.3s infinite ease-in-out!important;-ms-animation:cbh-circle-fill-anim 2.3s infinite ease-in-out!important;-o-animation:cbh-circle-fill-anim 2.3s infinite ease-in-out!important;animation:cbh-circle-fill-anim 2.3s infinite ease-in-out!important;opacity:0!important}         .cbh-phone.cbh-hover .cbh-ph-circle-fill{background-color:rgba(0,175,242,.5);opacity:.75!important}
+        .cbh-phone.cbh-green.cbh-hover .cbh-ph-circle-fill{background-color:rgba(117,235,80,.5);opacity:.75!important}
+        .cbh-phone.cbh-green .cbh-ph-circle-fill{background-color:rgba(0,175,242,.5);opacity:.75!important}
+        .cbh-phone.cbh-gray.cbh-hover .cbh-ph-circle-fill{background-color:rgba(204,204,204,.5);opacity:.75!important}
+        .cbh-phone.cbh-gray .cbh-ph-circle-fill{background-color:rgba(117,235,80,.5);opacity:1!important}
+        .cbh-ph-img-circle1{width:50px;height:50px;top:70px;left:70px;position:absolute;background-image:url(images/wpp-icon.png);background-size: 40px 40px;background-color:rgba(30,30,30,.1);background-position:center center;background-repeat:no-repeat;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;border:2px solid transparent;opacity:1;-webkit-animation:cbh-circle-img-anim 1s infinite ease-in-out;-moz-animation:cbh-circle-img-anim 1s infinite ease-in-out;-ms-animation:cbh-circle-img-anim 1s infinite ease-in-out;-o-animation:cbh-circle-img-anim 1s infinite ease-in-out;animation:cbh-circle-img-anim 1s infinite ease-in-out}
+        .cbh-phone.cbh-active .cbh-ph-img-circle1{-webkit-animation:cbh-circle-img-anim 1s infinite ease-in-out!important;-moz-animation:cbh-circle-img-anim 1s infinite ease-in-out!important;-ms-animation:cbh-circle-img-anim 1s infinite ease-in-out!important;-o-animation:cbh-circle-img-anim 1s infinite ease-in-out!important;animation:cbh-circle-img-anim 1s infinite ease-in-out!important}
+        .cbh-phone.cbh-static .cbh-ph-img-circle1{-webkit-animation:cbh-circle-img-anim 0s infinite ease-in-out!important;-moz-animation:cbh-circle-img-anim 0s infinite ease-in-out!important;-ms-animation:cbh-circle-img-anim 0s infinite ease-in-out!important;-o-animation:cbh-circle-img-anim 0s infinite ease-in-out!important;animation:cbh-circle-img-anim 0s infinite ease-in-out!important}
+        .cbh-phone.cbh-hover .cbh-ph-img-circle1{background-color:rgba(0,175,242,1)}
+        .cbh-phone.cbh-green.cbh-hover .cbh-ph-img-circle1:hover{background-color:rgba(117,235,80,1)}
+        .cbh-phone.cbh-green .cbh-ph-img-circle1{background-color:rgba(0,175,242,1)}
+        .cbh-phone.cbh-green .cbh-ph-img-circle1{background-color:rgba(0,175,242,1)}
+        .cbh-phone.cbh-gray.cbh-hover .cbh-ph-img-circle1{background-color:rgba(204,204,204,1)}
+        .cbh-phone.cbh-gray .cbh-ph-img-circle1{background-color:rgba(117,235,80,1)}@-moz-keyframes cbh-circle-anim{0%{-moz-transform:rotate(0deg) scale(0.5) skew(1deg);opacity:.1;-moz-opacity:.1;-webkit-opacity:.1;-o-opacity:.1}30%{-moz-transform:rotate(0deg) scale(.7) skew(1deg);opacity:.5;-moz-opacity:.5;-webkit-opacity:.5;-o-opacity:.5}100%{-moz-transform:rotate(0deg) scale(1) skew(1deg);opacity:.6;-moz-opacity:.6;-webkit-opacity:.6;-o-opacity:.1}}@-webkit-keyframes cbh-circle-anim{0%{-webkit-transform:rotate(0deg) scale(0.5) skew(1deg);-webkit-opacity:.1}30%{-webkit-transform:rotate(0deg) scale(.7) skew(1deg);-webkit-opacity:.5}100%{-webkit-transform:rotate(0deg) scale(1) skew(1deg);-webkit-opacity:.1}}@-o-keyframes cbh-circle-anim{0%{-o-transform:rotate(0deg) kscale(0.5) skew(1deg);-o-opacity:.1}30%{-o-transform:rotate(0deg) scale(.7) skew(1deg);-o-opacity:.5}100%{-o-transform:rotate(0deg) scale(1) skew(1deg);-o-opacity:.1}}@keyframes cbh-circle-anim{0%{transform:rotate(0deg) scale(0.5) skew(1deg);opacity:.1}30%{transform:rotate(0deg) scale(.7) skew(1deg);opacity:.5}100%{transform:rotate(0deg) scale(1) skew(1deg);opacity:.1}}@-moz-keyframes cbh-circle-fill-anim{0%{-moz-transform:rotate(0deg) scale(0.7) skew(1deg);opacity:.2}50%{-moz-transform:rotate(0deg) -moz-scale(1) skew(1deg);opacity:.2}100%{-moz-transform:rotate(0deg) scale(0.7) skew(1deg);opacity:.2}}@-webkit-keyframes cbh-circle-fill-anim{0%{-webkit-transform:rotate(0deg) scale(0.7) skew(1deg);opacity:.2}50%{-webkit-transform:rotate(0deg) scale(1) skew(1deg);opacity:.2}100%{-webkit-transform:rotate(0deg) scale(0.7) skew(1deg);opacity:.2}}@-o-keyframes cbh-circle-fill-anim{0%{-o-transform:rotate(0deg) scale(0.7) skew(1deg);opacity:.2}50%{-o-transform:rotate(0deg) scale(1) skew(1deg);opacity:.2}100%{-o-transform:rotate(0deg) scale(0.7) skew(1deg);opacity:.2}}@keyframes cbh-circle-fill-anim{0%{transform:rotate(0deg) scale(0.7) skew(1deg);opacity:.2}50%{transform:rotate(0deg) scale(1) skew(1deg);opacity:.2}100%{transform:rotate(0deg) scale(0.7) skew(1deg);opacity:.2}}@keyframes cbh-circle-img-anim{0%{transform:rotate(0deg) scale(1) skew(1deg)}10%{transform:rotate(-25deg) scale(1) skew(1deg)}20%{transform:rotate(25deg) scale(1) skew(1deg)}30%{transform:rotate(-25deg) scale(1) skew(1deg)}40%{transform:rotate(25deg) scale(1) skew(1deg)}100%,50%{transform:rotate(0deg) scale(1) skew(1deg)}}@-moz-keyframes cbh-circle-img-anim{0%{transform:rotate(0deg) scale(1) skew(1deg)}10%{-moz-transform:rotate(-25deg) scale(1) skew(1deg)}20%{-moz-transform:rotate(25deg) scale(1) skew(1deg)}30%{-moz-transform:rotate(-25deg) scale(1) skew(1deg)}40%{-moz-transform:rotate(25deg) scale(1) skew(1deg)}100%,50%{-moz-transform:rotate(0deg) scale(1) skew(1deg)}}@-webkit-keyframes cbh-circle-img-anim{0%{-webkit-transform:rotate(0deg) scale(1) skew(1deg)}10%{-webkit-transform:rotate(-25deg) scale(1) skew(1deg)}20%{-webkit-transform:rotate(25deg) scale(1) skew(1deg)}30%{-webkit-transform:rotate(-25deg) scale(1) skew(1deg)}40%{-webkit-transform:rotate(25deg) scale(1) skew(1deg)}100%,50%{-webkit-transform:rotate(0deg) scale(1) skew(1deg)}}@-o-keyframes cbh-circle-img-anim{0%{-o-transform:rotate(0deg) scale(1) skew(1deg)}10%{-o-transform:rotate(-25deg) scale(1) skew(1deg)}20%{-o-transform:rotate(25deg) scale(1) skew(1deg)}30%{-o-transform:rotate(-25deg) scale(1) skew(1deg)}40%{-o-transform:rotate(25deg) scale(1) skew(1deg)}100%,50%{-o-transform:rotate(0deg) scale(1) skew(1deg)}}
+        .cbh-ph-img-circle1 {}
+        .cbh-phone.cbh-green .cbh-ph-circle {border-color: rgb(0, 242, 164)}
+        .cbh-phone.cbh-green .cbh-ph-circle-fill {background-color: rgb(0, 242, 164);}
+        .cbh-phone.cbh-green .cbh-ph-img-circle1 {background-color:rgb(46, 203, 113);}
+
+        .kmacb__manager-border {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            top: 50%;
+            left: 50%;
+            margin-top: -39.5px;
+            margin-left: -39.5px;
+            border-radius: 100%;
+            border: 2px solid #ffe787;
+            -webkit-animation: kmacb__manager-border-anim 1.5s ease-in-out .5s infinite;
+            -moz-animation: kmacb__manager-border-anim 1.5s ease-in-out .5s infinite;
+            -ms-animation: kmacb__manager-border-anim 1.5s ease-in-out .5s infinite;
+            -o-animation: kmacb__manager-border-anim 1.5s ease-in-out .5s infinite;
+            animation: kmacb__manager-border-anim 1.5s ease-in-out .5s infinite;
+            opacity: .8;
+            transform-origin: center;
+        }
+        .kmacb__manager-fill {
+            background: #52aff7 center bottom no-repeat;
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            top: 50%;
+            left: 50%;
+            margin-top: -37.5px;
+            margin-left: -37.5px;
+            border-radius: 100%;
+            opacity: .5;
+            -webkit-animation: kmacb__manager-fill-anim 1.5s ease-in-out infinite;
+            -moz-animation: kmacb__manager-fill-anim 1.5s ease-in-out infinite;
+            -ms-animation: kmacb__manager-fill-anim 1.5s ease-in-out infinite;
+            -o-animation: kmacb__manager-fill-anim 1.5s ease-in-out infinite;
+            animation: kmacb__manager-fill-anim 1.5s ease-in-out infinite;
+            transform-origin: center;
+        }
+        .kmacb__manager-circle {
+            background: #52aff7;
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            top: 50%;
+            left: 50%;
+            margin-top: -60px;
+            margin-left: -60px;
+            border-radius: 100%;
+        }
+    </style></head>
+    
+    <body>
+        <!-- Page-wrapper-Start -->
+        <div class="page_wrapper">
+            <!-- Preloader -->
+            <div id="preloader">
+                <div id="loader"></div>
+            </div>
+            <!-- Header Start -->
+            <header>
+                <!-- container start -->
+                <div class="container">
+                    <!-- navigation bar -->
+                    <nav class="navbar navbar-expand-lg"><a class="navbar-brand" href="#"> <img style="width: 75px" src="images/Icone sem fundo.png" alt="image"><span><strong>TOPGESTOR</strong></span></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> <!-- <i class="icofont-navigation-menu ico_menu"></i> --> <div class="toggle-wrap">
+                                    <span class="toggle-bar"></span>
+                                </div> </span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <!-- secondery menu start -->
+                                <!-- secondery menu end -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#features">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#features">Como funciona?</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#faq">Dúvidas</a>
+                                </li>
+                                <!-- secondery menu start -->
+                                <!-- secondery menu end -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#precos">Preços</a>
+                                </li>
+                                <!-- secondery menu start -->
+                                <!-- secondery menu end -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contato">Contato</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link dark_btn" href="https://topgestor.me/login">Login</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- navigation end -->
+                </div>
+                <!-- container end -->
+            </header>
+            <!-- Banner-Section-Start -->
+            <section class="banner_section">
+                <!-- container start -->
+                <div class="container">
+                    <!-- row start -->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12" data-aos="fade-right" data-aos-duration="1500">
+                            <!-- banner text -->
+                            <div class="banner_text">
+                                <!-- h1 -->
+                                <h2 style="font-size: 50px;">Automação e Gestão</h2>
+                                <!-- h2 -->
+                                <h2>Cobranças Automáticas com<span> API WhatsApp</span></h2>
+                                <!-- p -->
+                                <p>Automatize suas cobranças e gerenciamento de clientes em um só lugar. Envie notificações via WhatsApp, gere faturas e economize tempo.</p>
+                            </div>
+                            <!-- app buttons -->
+                            <ul>
+                                <li>
+                                    <a href="https://topgestor.me/login" class="btn puprple_btn aos-init aos-animate" data-aos="fade-in" data-aos-duration="1500">Criar Conta</a>
+                                </li>
+                            </ul>
+                            <!-- users -->
+                        </div>
+                        <!-- banner slides start -->
+                        <div class="col-lg-6 col-md-12" data-aos="fade-in" data-aos-duration="1500">
+                            <div class="banner_image">
+                                <div class="neo-video-player">
+                                    <iframe 
+                                    width="560" height="315" 
+                                    src="https://www.youtube.com/embed/L3cYc0ceAQo?si=cXGhggz9ktiD22UY" title="YouTube video player" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen>
+
+                                    </iframe>
+                                </div>
+                                <!-- video section start -->
+                                <!-- video section end -->
+                            </div>
+                        </div>
+                        <!-- banner slides end -->
+                    </div>
+                    <!-- row end -->
+                </div>
+                <!-- container end -->
+            </section>
+            <!-- Banner-Section-end -->
+            <!-- Trusted Section start -->
+            <section class="row_am trusted_section how_it_works">
+                <!-- container start -->
+                <div class="container">
+                    <!-- logos slider start -->
+                    <div class="how_it_inner"> 
+                        <div class="section_title aos-init aos-animate" data-aos="fade-up" data-aos-duration="900" data-aos-delay="10">
+                            <!-- h2 -->
+                            <h2>Automatize seu <span>trabalho</span></h2>
+                            <!-- p -->
+                            <p>Prepare-se para o futuro automatizado. Não perca mais tempo.</p>
+                        </div>
+                        <div class="step_block"> 
+                            <hr class="mt-0">
+                            <!-- row start -->                             
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="feature_box aos-init aos-animate" data-aos="fade-up" data-aos-duration="1500">
+                                        <div class="text">
+                                            <h4>Sistema de Automação</h4>
+                                            <p>Robô com funcionalidade 24h ativo, não precisa está com PC ou Celular ligado ele vai funcionar normal.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature_box aos-init aos-animate" data-aos="fade-up" data-aos-duration="1700">
+                                        <div class="text">
+                                            <h4>Gestão de Clientes</h4>
+                                            <p>Cadastre o MAC e KEY para controle dos dados de aplicativos, tenha busca inteligente do cliente por usuário.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature_box aos-init aos-animate" data-aos="fade-up" data-aos-duration="1900">
+                                        <div class="text">
+                                            <h4>Marketing / Agendamentos</h4>
+                                            <p>Crie várias campanhas inteligentes para quem está vencido e recuperar vendas perdidas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                             
+                        </div>                         
+                    </div>
+                    <!-- logos slider end -->
+                </div>
+                <!-- container end -->
+            </section>
+            <section class="row_am trusted_section">
+                <!-- container start -->
+                <div class="container">
+                    <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                        <!-- h2 -->
+                        <h2>Use os melhores <span>gateways</span> do mercado.</h2>
+                        <!-- p -->
+                        <p>Ofereça para seus clientes as melhores formas de pagamento.</p>
+                    </div>
+                    <!-- logos slider start -->
+                    <div class="company_logos">
+                        <div id="company_slider" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="images/mercadopago.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="images/pix.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="images/mercadopago.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="images/pix.png" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- logos slider end -->
+                </div>
+                <!-- container end -->
+            </section>
+            <!-- Trusted Section ends -->
+            <!-- Features-Section-Start -->
+            <section class="row_am features_section" id="features">
+                <!-- container start -->
+                <div class="container">
+                    <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                        <!-- h2 -->
+                        <h2>Cobranças Automáticas pelo<span> WhatsApp</span></h2>
+                        <!-- p -->
+                        <p>Robô do TOP Gestor fica ativo 24h/7 para Envios de lembretes e cobrança. Enquanto você dorme ele trabalha por você!<br> Mensagens enviadas: Acompanhe as filas de envios, falhas e reagendamento de envios.</p>
+                    </div>
+                    <div class="feature_detail">
+                        <!-- feature box left -->
+                        <div class="left_data feature_box">
+                            <!-- feature box -->
+                            <div class="data_block" data-aos="fade-right" data-aos-duration="1500">
+                                <div class="text">
+                                    <h4>Gestão de Clientes</h4>
+                                    <p>Controle geral dos seus clientes com filtros inteligente, editar, cadastro de planos, produtos, aplicativos, Mac e Key-OTT.</p>
+                                </div>
+                            </div>
+                            <!-- feature box -->
+                            <div class="data_block" data-aos="fade-right" data-aos-duration="1500">
+                                <div class="text">
+                                    <h4>Sistema de Métricas</h4>
+                                    <p>Tenha total controle nas Taxas de Renovação e Não renovação saiba qual servidor mais da Lucro e qual da menos lucro.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- feature box right -->
+                        <div class="right_data feature_box">
+                            <!-- feature box -->
+                            <div class="data_block" data-aos="fade-left" data-aos-duration="1500">
+                                <div class="text">
+                                    <h4>Sistema de Faturas</h4>
+                                    <p>Poderá enviar a faturas para seus clientes por Link ou PDF.</p>
+                                </div>
+                            </div>
+                            <!-- feature box -->
+                            <div class="data_block" data-aos="fade-left" data-aos-duration="1500">
+                                <div class="text">
+                                    <h4>Financeiro + Relatórios</h4>
+                                    <p>Tenha total controle de todo seu Faturamento, Lucro e Custo e saiba qual servidor, aplicativo, plano mais vende.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- feature image -->
+                        <div class="feature_img" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                            <img src="images/ApiGlite1.png" alt="image">
+                        </div>
+                    </div>
+                </div>
+                <!-- container end -->
+            </section>
+            <!-- Features-Section-end -->
+            <!-- About-App-Section-Start -->
+            <section class="row_am modern_ui_section" style="margin-top: 5rem!important;">
+                <!-- container start -->
+                <div class="container">
+                    <!-- row start -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- UI content -->
+                            <div class="ui_text">
+                                <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                                    <h2><span>Lembretes</span> e mensagens.</h2>
+                                    <p>
+                                        Envie lembretes dias Antes e Após o vencimento dos seus clientes, tenha liberda de criar mensagens customizadas para seus lembretes com qualquer informação do seu cliente, também tenha liberdade de escolher o dia e a hora que seus clientes receberam os lembretes automáticos. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- UI Image -->
+                            <div class="ui_images" data-aos="fade-in" data-aos-duration="1500">
+                                <div class="left_img">
+                                    <img class="moving_position_animatin w-100" src="images/person-mobile-website-gesorlite.png" alt="image">
+                                </div>
+                                <!-- UI Image -->
+                                <div class="right_img">
+                                    <img class="moving_position_animatin" src="images/secure_data.png" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row end -->
+                </div>
+                <!-- container end -->
+            </section>
+            <section class="row_am about_app_section modern_ui_section">
+                <!-- container start -->
+                <div class="container">
+                    <!-- row start -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- about images -->
+                            <div class="about_img" data-aos="fade-in" data-aos-duration="1500">
+                                <div class="frame_img">
+                                    <img style="max-width: 220px;border-radius:12px" class="moving_position_animatin shadow" src="images/appgestor.jpg" alt="image">
+                                </div>
+                                <div class="screen_img">
+                                    <img style="max-width: 220px;border-radius:12px" class="moving_animation shadow" src="images/appgestor2.jpg" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- about text -->
+                            <div class="about_text">
+                                <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                                    <!-- h2 -->
+                                    <h2>Temos opções <span>exclusivas</span>! <br>
+                                    Veja o nosso diferencial</h2>
+                                    <!-- p -->
+                                    <ul class="design_block">
+                                        <li data-aos="fade-up" data-aos-duration="1500" class="aos-init aos-animate">
+                                            <h4>Integração com Mercado pago - Renovações Automática.</h4>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="1500" class="aos-init aos-animate">
+                                            <h4>Backup/Importação de Clientes em Massa.</h4>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="1500" class="aos-init aos-animate">
+                                            <h4>Proteção de dados criptografados.</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- UL -->
+                                <!-- UL end -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row end -->
+                </div>
+                <!-- container end -->
+            </section>
+            <!-- About-App-Section-end -->
+            <!-- ModernUI-Section-Start -->
+            <!-- ModernUI-Section-end -->
+            <!-- How-It-Workes-Section-Start -->
+            <!-- How-It-Workes-Section-end -->
+            <!-- Testimonial-Section start -->
+            <!-- Testimonial-Section end -->
+            <!-- Pricing-Section -->
+            <section class="row_am pricing_section" id="precos">
+                <!-- container start -->
+                <div class="container">
+                    <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+                        <!-- h2 -->
+                        <h2>Escolha o plano ideal para seu <span>negócio</span>.</h2>
+                        <!-- p -->
+                    </div>
+                    <!-- pricing box  monthly start -->
+                    <div class="pricing_pannel monthly_plan active" data-aos="fade-up" data-aos-duration="1500">
+                        <!-- row start -->
+                        <div class="row">
+
+                        
+                            <!-- preço box -->
+                            <div class="col-md-4">
+                              <div class="pricing_block ">
+                                <div class="pkg_name">
+                                    <span>Plano</span>
+                                    <h2>Mensal</h2>
+                                </div><span class="price mb-0 mt-0">R$39,90</span>
+                                <div class="card-body text-left px-4">
+                                  <ul class="list-unstyled">
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Dashbord simplificado
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Cobranças Automática
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Gestão de Clientes
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Renovação Automática
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Recuperação de Clientes
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Faturas
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Servidores Ilimitados
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Gestão Financeira
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Relatórios
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Lojas e Produtos
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Revendas
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Backup Diário
+                                    </h5>
+                                 </li>
+                              </ul>                                </div>
+                                  <a href="https://topgestor.me/login" class="btn white_btn">Selecionar</a>
+                                </div>
+                              </div>
+
+                            
+                            <!-- preço box -->
+                            <div class="col-md-4">
+                              <div class="pricing_block ">
+                                <div class="pkg_name">
+                                    <span>Plano</span>
+                                    <h2>Bimestral</h2>
+                                </div><span class="price mb-0 mt-0">R$75,00</span>
+                                <div class="card-body text-left px-4">
+                                  <ul class="list-unstyled">
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Dashbord simplificado
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Cobranças Automática
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Gestão de Clientes
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Renovação Automática
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Recuperação de Clientes
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Faturas
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Servidores Ilimitados
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Gestão Financeira
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Relatórios
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Lojas e Produtos
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Revendas
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Backup Diário
+                                    </h5>
+                                 </li>
+                              </ul>                                </div>
+                                  <a href="https://topgestor.me/login" class="btn white_btn">Selecionar</a>
+                                </div>
+                              </div>
+
+                            
+                            <!-- preço box -->
+                            <div class="col-md-4">
+                              <div class="pricing_block nada">
+                                <div class="pkg_name">
+                                    <span>Plano</span>
+                                    <h2>Plano Trimestral</h2>
+                                </div><span class="price mb-0 mt-0">R$110,00</span>
+                                <div class="card-body text-left px-4">
+                                  <ul class="list-unstyled">
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Dashbord simplificado
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Cobranças Automática
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Gestão de Clientes
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Renovação Automática
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Recuperação de Clientes
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Faturas
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Servidores Ilimitados
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Gestão Financeira
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Relatórios
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Lojas e Produtos
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Sistema de Revendas
+                                    </h5>
+                                 </li>
+                                 <li>
+                                    <h5>
+                                       <span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+                                       Backup Diário
+                                    </h5>
+                                 </li>
+                              </ul>                                </div>
+                                  <a href="https://topgestor.me/login" class="btn white_btn">Selecionar</a>
+                                </div>
+                              </div>
+
+                                                    </div>
+                        <!-- row end -->
+                    </div>
+                    <!-- pricing box monthly end -->
+                </div>
+                <!-- container start end -->
+            </section>
+            <!-- Pricing-Section end -->
+            <!-- FAQ-Section start -->
+            <section class="row_am faq_section" id="faq">
+                <!-- container start -->
+                <div class="container">
+                    <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+                        <!-- h2 -->
+                        <h2><span>FAQ</span> - Perguntas Frequentes</h2>
+                        <!-- p -->
+                    </div>
+                    <!-- faq data -->
+                    <div class="faq_panel">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link active" data-toggle="collapse" data-target="#collapseOne">
+                                            <i class="icon_faq icofont-plus"></i> Posso fazer um teste gratuito?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Sim! Oferecemos um período de teste gratuito para que você possa explorar todas as funcionalidades do TOP GESTOR antes de se comprometer com um plano de assinatura. Acesse a área de cadastro e faça seu teste gratuito para começar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="icon_faq icofont-plus"></i> O sistema envia notificações via WhatsApp sobre o status da fatura?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Sim, o TOP GESTOR integra-se ao WhatsApp para enviar notificações automáticas sobre o status das faturas, lembretes de pagamento e mais, garantindo que você e seus clientes estejam sempre informados.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"><i class="icon_faq icofont-plus"></i>Vocês oferecem serviços IPTV ou Internet para venda ou revenda?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>O TOP GESTOR é uma plataforma de gestão que suporta provedores de IPTV, facilitando a gestão de clientes, planos e pagamentos. Não fornecemos diretamente serviços IPTV, mas oferecemos as ferramentas necessárias para que você possa gerenciar eficientemente sua própria oferta de IPTV.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"><i class="icon_faq icofont-plus"></i>Como posso acessar o suporte técnico?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Nosso suporte técnico está disponível 24/7 via e-mail, whatsapp e telegram. Você pode acessar o suporte técnico diretamente através do seu painel de controle do TOP GESTOR ou diretamente com seu represetante.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive"><i class="icon_faq icofont-plus"></i>Existem limitações de uso no período de teste gratuito?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Durante o período de teste gratuito, você tem acesso a todas as funcionalidades do sistema, assim que você opta por um dos nossos planos pagos após o periodo de teste tudo continuará funcionar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix"><i class="icon_faq icofont-plus"></i>Como posso cancelar minha assinatura do TOP GESTOR?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Você pode cancelar sua assinatura a qualquer momento através do seu painel de controle. Nenhuma taxa adicional será aplicada, e você pode continuar usando o serviço até o final do período de faturamento atual.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven"><i class="icon_faq icofont-plus"></i>O sistema é compatível com quais dispositivos?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseSeven" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>O TOP GESTOR é compatível com todos os dispositivos modernos, incluindo computadores desktop, laptops, tablets e smartphones. Nossa plataforma é baseada na web, permitindo acesso fácil de qualquer dispositivo com conexão à internet.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight"><i class="icon_faq icofont-plus"></i>Quais são os principais diferenciais do TOP GESTOR em relação a outros sistemas de gestão?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseEight" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>O TOP GESTOR se destaca por sua robusta automação e funcionalidades inovadoras:
+                                            <li><strong>Sistema de Automação</strong>: Nosso robô fica ativo 24h/7, enviando lembretes e cobranças, garantindo que seu negócio opere continuamente sem sua intervenção direta.</li>
+                                            <li><strong>Sistema de Ranks</strong>: Obtenha insights sobre quais produtos, servidores ou planos têm melhor desempenho em vendas.</li>
+                                            <li><strong>Sistema de Métricas</strong>: Controle detalhado sobre as taxas de renovação e lucratividade por servidor, permitindo otimizações estratégicas.</li>
+                                            <li><strong>Marketing/Agendamentos</strong>: Ferramentas avançadas para escalar suas vendas e recuperar clientes, com campanhas de indicação personalizadas.</li>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine"><i class="icon_faq icofont-plus"></i>Em quais nichos o TOP GESTOR pode ser efetivamente utilizado?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseNine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Além de ser uma ferramenta poderosa para provedores de IPTV, o TOP GESTOR é ideal para uma variedade de negócios que requerem gestão de assinaturas e serviços recorrentes, tais como:
+                                            <li>- <strong>Serviços de Mensalidades</strong></li>
+                                            <li>- <strong>Academias</strong></li>
+                                            <li>- <strong>Salões de Beleza</strong></li>
+                                            <li>- <strong>Escolas</strong></li>
+                                            <li>- <strong>Pet Shops</strong></li>
+                                            <li>- <strong>Provedores de VPN e outros serviços digitais</strong></li></p>
+
+                                        <p>Estas funcionalidades garantem que qualquer negócio que opere com serviços contínuos ou recorrentes possa maximizar sua eficiência e reduzir inadimplência.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTen"><i class="icon_faq icofont-plus"></i>Como o TOP GESTOR ajuda a reduzir a inadimplência?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseTen" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>O sistema automatiza o envio de lembretes de pagamento antes do vencimento das faturas, melhorando significativamente as taxas de pagamento em dia. Os lembretes podem ser configurados para alertar tanto os clientes quanto a equipe interna, garantindo que todos estejam sempre informados.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0"> <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEleven"><i class="icon_faq icofont-plus"></i>O TOP GESTOR possui algum tipo de suporte contínuo ou atualizações?
+                                        </button> </h2>
+                                </div>
+                                <div id="collapseEleven" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>Sim, contamos com uma equipe de programadores dedicada e oferecemos uma API de WhatsApp própria com atualizações constantes para garantir estabilidade e segurança. Além disso, nosso sistema realiza backups diários automáticos e utiliza criptografia avançada para proteger todos os dados armazenados.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- container end -->
+            </section>
+            <!-- FAQ-Section end -->
+            <!-- Beautifull-interface-Section start -->
+            <!-- Beautifull-interface-Section end -->
+            <!-- Download-Free-App-section-Start  -->
+            <!-- Download-Free-App-section-end  -->
+            <!-- Story-Section-Start -->
+            <!-- Story-Section-end -->
+            <!-- News-Letter-Section-Start -->
+            <!-- News-Letter-Section-end -->
+            <!-- Footer-Section start -->
+            <footer>
+                <div class="top_footer" id="contact">
+                    <!-- container start -->
+                    <div class="container">
+                        <!-- row start -->
+                        <div class="row">
+                            <!-- footer link 1 -->
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="abt_side">
+                                    <div class="logo"> 
+                                        <h2 class="font-weight-bold">TopGestor</h2>
+                                    </div>
+                                    <p>Gerencie suas finanças de forma eficiente com cobranças automáticas no WhatsApp. Nosso painel foi desenvolvido especialmente para você.</p>
+                                </div>
+                            </div>
+                            <!-- footer link 2 -->
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <div class="links">
+                                    <h3>Links Úteis</h3>
+                                    <ul>
+                                        <li><a href="https://topgestor.me">Home</a>
+                                        </li>
+                                        <li><a href="termos">Termos de Uso</a>
+                                        </li>
+                                        <li><a href="#">Fale Conosco</a>
+                                        </li>
+                                        <li><a href="https://topgestor.me/login">Seja Afiliado</a>
+                                        </li>
+                                        <li>
+</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- footer link 3 -->
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <div class="links">
+                                    <h3>Menu</h3>
+                                    <ul>
+                                        <li><a href="#">FAQs</a>
+                                        </li>
+                                        <li><a href="https://topgestor.me/login">Login</a>
+                                        </li>
+                                        <li><a href="https://topgestor.me/login">Criar Conta</a>
+                                        </li>
+                                        <li>
+</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                    </div>
+                    <!-- container end -->
+                </div>
+                <!-- last footer -->
+                <div class="bottom_footer">
+                    <!-- container start -->
+                    <div class="container">
+                        <!-- row start -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>© Copyrights 2024. Todos os direitos reservados.</p>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                    </div>
+                    <!-- container end -->
+                </div>
+                <!-- go top button -->
+            </footer>
+            <!-- Footer-Section end -->
+            <!-- VIDEO MODAL -->
+            <div class="modal fade youtube-video" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <button id="close-video" type="button" class="button btn btn-default text-right" data-dismiss="modal">
+                            <i class="icofont-close-line-circled"></i>
+                        </button>
+                        <div class="modal-body">
+                            <div id="video-container" class="video-container">
+                                <iframe id="youtubevideo" src="" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+                            </div>                             
+                        </div>
+                        <div class="modal-footer">
+</div>
+                    </div>                     
+                </div>
+            </div>
+            <div class="purple_backdrop"></div>
+        </div>
+
+        <div class="phone-call cbh-phone cbh-green cbh-show  cbh-static" id="clbh_phone_div" style="">
+            <a id="WhatsApp-button" href="https://wa.me/5571999632903" target="_blank" class="phoneJs" title="WhatsApp 360imagem">
+                <div class="cbh-ph-circle"></div>
+                <div class="cbh-ph-circle-fill"></div>
+                <div class="cbh-ph-img-circle1"></div>
+            </a>
+        </div>
+        
+        <!-- Page-wrapper-End -->
+        <!-- Jquery-js-Link -->
+        <script src="js/jquery.js"></script>
+        <!-- owl-js-Link -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- bootstrap-js-Link -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- aos-js-Link -->
+        <script src="js/aos.js"></script>
+        <!-- main-js-Link -->
+        <script src="js/main.js"></script>
+    
+</body></html>
