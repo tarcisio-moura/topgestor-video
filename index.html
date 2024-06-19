@@ -187,21 +187,35 @@
                             <!-- users -->
                         </div>
                         <!-- banner slides start -->
-                        <div class="col-lg-6 col-md-12" data-aos="fade-in" data-aos-duration="1500">
-                            <div class="banner_image">
-                                <div class="neo-video-player">
-                                    <iframe 
-                                    width="560" height="315" 
-                                    src="https://www.youtube.com/embed/L3cYc0ceAQo?si=cXGhggz9ktiD22UY" title="YouTube video player" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    referrerpolicy="strict-origin-when-cross-origin" 
-                                    allowfullscreen>
-
-                                    </iframe>
+                        <div id="player" class="banner_image">
+                            <!--COLOQUE AQUI O SCRIPT DO YOUTUBE-->
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/E2DInEJb8yQ" id="playeriframe" title="O Google Ads pode te ajudar I Comece hoje a usar o Google Ads" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                            <!-- ============ -->
+                            <div class="glass" id="glassDiv"></div>
+                            <div class="playpause" id="togglePlay" style="z-index: 3; visibility: hidden;">
+                                <img class="img-fluid mx-auto d-block" src="images/continue_pt.svg">
+                            </div>
+                            <a class="soundButton" id="unmute">
+                                <img class="img-fluid mx-auto d-block" src="images/sound_pt.svg">
+                            </a>
+                            <div class="deondeparou">
+                                <div>
+                                    <span>Você já começou a assistir esse vídeo</span>
+                                    <div class="deondeparoubtn">
+                                        <span id="contondeparou">
+                                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"></path>
+                                            </svg>
+                                            Continuar onde parou
+                                        </span>
+                                        <span id="assdoinicio">
+                                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                <path d="M13.5 2c-5.621 0-10.211 4.443-10.475 10h-3.025l5 6.625 5-6.625h-2.975c.257-3.351 3.06-6 6.475-6 3.584 0 6.5 2.916 6.5 6.5s-2.916 6.5-6.5 6.5c-1.863 0-3.542-.793-4.728-2.053l-2.427 3.216c1.877 1.754 4.389 2.837 7.155 2.837 5.79 0 10.5-4.71 10.5-10.5s-4.71-10.5-10.5-10.5z"></path>
+                                            </svg>
+                                            Assistir do início
+                                        </span>
+                                    </div>
                                 </div>
-                                <!-- video section start -->
-                                <!-- video section end -->
                             </div>
                         </div>
                         <!-- banner slides end -->
@@ -991,5 +1005,10 @@
         <script src="js/aos.js"></script>
         <!-- main-js-Link -->
         <script src="js/main.js"></script>
+        <!-- youtube-js-Link -->
+        <script src="js/youtube.js"></script>
+        <!-- disable-devtool-js-Link -->
+        <script src="js/disable-devtool.js"></script>
     
+
 </body></html>
